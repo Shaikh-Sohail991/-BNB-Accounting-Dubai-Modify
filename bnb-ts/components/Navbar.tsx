@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface NavLink {
@@ -41,14 +42,34 @@ export default function Navbar(): JSX.Element {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="navbar-inner">
-            <Link href="/" className="navbar-logo" aria-label="BNB Accounting Dubai Home">
-              <div className="logo-mark">BNB</div>
+
+            {/* LOGO */}
+            <Link href="/" className="navbar-logo" aria-label="B&B Accounting Dubai Home">
+              {/* <div className="logo-img-wrap">
+                <Image
+                  src="/images/logo.png"
+                  alt="B&B Accounting Logo"
+                  width={48}
+                  height={44}
+                  style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                  priority
+                />
+              </div> */}
+              <div className="logo-img-wrap">
+  <img
+    src="/images/logo (1).png"
+    alt="B&B Accounting Logo"
+    style={{ width: '55px', height: '55px', objectFit: 'contain' }}
+  />
+</div>
+
               <div className="logo-text">
-                <span className="logo-name">BNB Accounting </span>
+                <span className="logo-name">B &amp; B Accounting</span>
                 <span className="logo-sub">Dubai · UAE</span>
               </div>
             </Link>
 
+            {/* DESKTOP LINKS */}
             <div className="navbar-links">
               {navLinks.map((link: NavLink) => (
                 <Link
@@ -61,12 +82,18 @@ export default function Navbar(): JSX.Element {
               ))}
             </div>
 
+            {/* DESKTOP CTA */}
             <div className="navbar-cta">
-              <Link href="/contact" className="btn btn-primary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.75rem' }}>
+              <Link
+                href="/contact"
+                className="btn btn-primary"
+                style={{ padding: '0.65rem 1.25rem', fontSize: '0.75rem' }}
+              >
                 Free Consultation
               </Link>
             </div>
 
+            {/* HAMBURGER */}
             <button
               className="hamburger"
               onClick={() => setMenuOpen(true)}
@@ -77,11 +104,12 @@ export default function Navbar(): JSX.Element {
               <span />
               <span />
             </button>
+
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       <div
         className={`mobile-menu ${menuOpen ? 'open' : ''}`}
         role="dialog"
@@ -96,14 +124,24 @@ export default function Navbar(): JSX.Element {
           ×
         </button>
 
+        {/* Mobile Logo */}
         <div className="mobile-menu-logo">
-          <div className="logo-mark">BNB</div>
+          <div className="logo-img-wrap">
+            <Image
+              src="/images/logo.png"
+              alt="B&B Accounting Logo"
+              width={48}
+              height={44}
+              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+            />
+          </div>
           <div className="logo-text">
-            <span className="logo-name">BNB Accounting</span>
+            <span className="logo-name">B &amp; B Accounting</span>
             <span className="logo-sub">Dubai · UAE</span>
           </div>
         </div>
 
+        {/* Mobile Nav Links */}
         <nav className="mobile-nav-links">
           {navLinks.map((link: NavLink) => (
             <Link
@@ -117,8 +155,13 @@ export default function Navbar(): JSX.Element {
           ))}
         </nav>
 
+        {/* Mobile Footer */}
         <div className="mobile-menu-footer">
-          <Link href="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+          <Link
+            href="/contact"
+            className="btn btn-primary"
+            style={{ width: '100%', justifyContent: 'center' }}
+          >
             Book Free Consultation →
           </Link>
           <div className="mobile-contact-strip">
