@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { FiPhone, FiMail } from 'react-icons/fi';
 
 interface NavLink {
   href: string;
@@ -45,24 +46,13 @@ export default function Navbar(): JSX.Element {
 
             {/* LOGO */}
             <Link href="/" className="navbar-logo" aria-label="B&B Accounting Dubai Home">
-              {/* <div className="logo-img-wrap">
-                <Image
-                  src="/images/logo.png"
-                  alt="B&B Accounting Logo"
-                  width={48}
-                  height={44}
-                  style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                  priority
-                />
-              </div> */}
               <div className="logo-img-wrap">
-  <img
-    src="/images/logo (1).png"
-    alt="B&B Accounting Logo"
-    style={{ width: '55px', height: '55px', objectFit: 'contain' }}
-  />
-</div>
-
+                <img
+                  src="/images/logo (1).png"
+                  alt="B&B Accounting Logo"
+                  style={{ width: '55px', height: '55px', objectFit: 'contain' }}
+                />
+              </div>
               <div className="logo-text">
                 <span className="logo-name">B &amp; B Accounting</span>
                 <span className="logo-sub">Dubai · UAE</span>
@@ -128,11 +118,11 @@ export default function Navbar(): JSX.Element {
         <div className="mobile-menu-logo">
           <div className="logo-img-wrap">
             <Image
-              src="/images/logo.png"
+              src="/images/logo (1).png"
               alt="B&B Accounting Logo"
-              width={48}
-              height={44}
-              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+              width={55}
+              height={55}
+              style={{ objectFit: 'contain', width: '55px', height: '55px' }}
             />
           </div>
           <div className="logo-text">
@@ -162,11 +152,15 @@ export default function Navbar(): JSX.Element {
             className="btn btn-primary"
             style={{ width: '100%', justifyContent: 'center' }}
           >
-            Book Free Consultation →
+            Book Free Consultation
           </Link>
           <div className="mobile-contact-strip">
-            <a href="tel:+97142000000">📞 +971 4 200 0000</a>
-            <a href="mailto:info@bnbaccounting.ae">✉️ info@bnbaccounting.ae</a>
+            <a href="tel:+97142000000" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <FiPhone size={14} /> +971 4 200 0000
+            </a>
+            <a href="mailto:info@bnbaccounting.ae" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <FiMail size={14} /> info@bnbaccounting.ae
+            </a>
           </div>
         </div>
       </div>

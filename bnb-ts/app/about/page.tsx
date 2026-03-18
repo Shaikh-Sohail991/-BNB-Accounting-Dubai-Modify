@@ -1,20 +1,33 @@
+import React from 'react';
 import Link from 'next/link';
+import { FiAward, FiUsers, FiZap, FiGlobe, FiTarget, FiEye, FiHome, FiCalendar, FiDollarSign, FiCheckCircle } from 'react-icons/fi';
 
 export const metadata = {
+
   title: 'About Us',
   description: 'Learn about BNB Accounting Dubai — our history, mission, values, and the experienced leadership team behind our financial expertise.',
 };
 
 const values = [
-  { icon: '🏆', title: 'Excellence', desc: 'We hold ourselves to the highest professional standards, mirroring the best global accounting practices.' },
-  { icon: '🤝', title: 'Integrity', desc: 'Complete transparency and ethical conduct in every client engagement, without exception.' },
-  { icon: '💡', title: 'Innovation', desc: 'We leverage modern financial tools and methodologies to deliver smarter, faster insights.' },
-  { icon: '🌍', title: 'Partnership', desc: "We build long-term relationships, becoming a trusted extension of our clients' financial teams." },
+  { icon: <FiAward size={28} color="#1BAFF0" />, title: 'Excellence', desc: 'We hold ourselves to the highest professional standards, mirroring the best global accounting practices.' },
+  { icon: <FiUsers size={28} color="#1BAFF0" />, title: 'Integrity', desc: 'Complete transparency and ethical conduct in every client engagement, without exception.' },
+  { icon: <FiZap size={28} color="#1BAFF0" />, title: 'Innovation', desc: 'We leverage modern financial tools and methodologies to deliver smarter, faster insights.' },
+  { icon: <FiGlobe size={28} color="#1BAFF0" />, title: 'Partnership', desc: "We build long-term relationships, becoming a trusted extension of our clients' financial teams." },
+];
+
+const stats = [
+  { value: '500+', label: 'Businesses Served', icon: <FiHome size={26} color="#1BAFF0" /> },
+  { value: '12+', label: 'Years of Excellence', icon: <FiCalendar size={26} color="#1BAFF0" /> },
+  { value: 'AED 2B+', label: 'Taxes Managed', icon: <FiDollarSign size={26} color="#1BAFF0" /> },
+  { value: '50+', label: 'Industries Covered', icon: <FiGlobe size={26} color="#1BAFF0" /> },
+  { value: '98%', label: 'Client Retention', icon: <FiUsers size={26} color="#1BAFF0" /> },
+  { value: '100%', label: 'FTA Compliant', icon: <FiCheckCircle size={26} color="#1BAFF0" /> },
 ];
 
 export default function AboutPage() {
   return (
     <>
+      {/* PAGE HERO */}
       <section className="page-hero">
         <div className="page-hero-grid" />
         <div className="container">
@@ -31,6 +44,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* OUR STORY */}
       <section className="section">
         <div className="container">
           <div className="about-intro">
@@ -68,21 +82,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* MISSION & VISION */}
       <section className="section" style={{ background: 'var(--gray-soft)' }}>
         <div className="container">
           <div className="section-header centered">
-            <p className="label-gold">Purpose & Direction</p>
+            <p className="label-gold">Purpose &amp; Direction</p>
             <div className="gold-line gold-line-center" />
             <h2 className="display-lg">Mission &amp; Vision</h2>
           </div>
           <div className="mission-vision">
             <div className="mv-card mission">
-              <div className="mv-icon">🎯</div>
+              <div className="mv-icon"><FiTarget size={32} color="#1BAFF0" /></div>
               <h3>Our Mission</h3>
               <p>To empower UAE businesses with world-class financial management, delivering accurate, compliant, and strategically insightful accounting services that drive informed decisions and sustainable growth.</p>
             </div>
             <div className="mv-card vision">
-              <div className="mv-icon">🔭</div>
+              <div className="mv-icon"><FiEye size={32} color="#1BAFF0" /></div>
               <h3>Our Vision</h3>
               <p>To be the UAE&rsquo;s most trusted and respected financial advisory firm — recognised for our integrity, expertise, and the transformative value we create for every client we serve.</p>
             </div>
@@ -90,6 +105,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* CORE VALUES */}
       <section className="section">
         <div className="container">
           <div className="section-header centered">
@@ -109,6 +125,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* TRACK RECORD */}
       <section className="section why-section">
         <div className="container">
           <div className="section-header centered">
@@ -117,14 +134,7 @@ export default function AboutPage() {
             <h2 className="display-lg" style={{ color: 'var(--white)' }}>Our Track Record</h2>
           </div>
           <div className="about-stats-grid">
-            {[
-              { value: '500+', label: 'Businesses Served', icon: '🏢' },
-              { value: '12+', label: 'Years of Excellence', icon: '📅' },
-              { value: 'AED 2B+', label: 'Taxes Managed', icon: '💰' },
-              { value: '50+', label: 'Industries Covered', icon: '🌐' },
-              { value: '98%', label: 'Client Retention', icon: '🤝' },
-              { value: '100%', label: 'FTA Compliant', icon: '✅' },
-            ].map(s => (
+            {stats.map(s => (
               <div key={s.label} className="about-stat-card">
                 <div className="about-stat-icon">{s.icon}</div>
                 <div className="about-stat-value">{s.value}</div>
@@ -135,13 +145,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="section cta-section">
         <div className="container">
           <div className="cta-inner">
             <h2 className="display-lg">Ready to Work Together?</h2>
             <p>Join over 500 businesses that trust BNB Accounting for their financial excellence.</p>
             <div className="cta-actions">
-              <Link href="/contact" className="btn btn-primary">Book a Consultation →</Link>
+              <Link href="/contact" className="btn btn-primary">Book a Consultation</Link>
               <Link href="/team" className="btn btn-outline">Meet the Team</Link>
             </div>
           </div>

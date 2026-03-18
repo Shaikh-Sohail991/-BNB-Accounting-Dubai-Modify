@@ -76,6 +76,7 @@ const certs = [
 export default function TeamPage() {
   return (
     <>
+      {/* PAGE HERO */}
       <section className="page-hero">
         <div className="page-hero-grid" />
         <div className="container">
@@ -92,6 +93,7 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* STATS BAR */}
       <section style={{ background: 'var(--gray-soft)', padding: '3rem 0', borderBottom: '1px solid var(--gray-border)' }}>
         <div className="container">
           <div className="team-intro-bar">
@@ -110,6 +112,7 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* TEAM GRID */}
       <section className="section">
         <div className="container">
           <div className="section-header centered">
@@ -135,7 +138,6 @@ export default function TeamPage() {
                   <div className="team-card-overlay" />
                   <div className="team-card-overlay-info">
                     <span className="team-card-overlay-name">{member.name}</span>
-                    {/* <span className="team-card-overlay-role">{member.role}</span> */}
                   </div>
                 </div>
                 <div className="team-card-body">
@@ -154,6 +156,7 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* CERTIFICATIONS */}
       <section className="section" style={{ background: 'var(--gray-soft)' }}>
         <div className="container">
           <div className="section-header centered">
@@ -172,6 +175,7 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* CAREERS */}
       <section className="section why-section">
         <div className="container">
           <div className="join-us-layout">
@@ -184,19 +188,20 @@ export default function TeamPage() {
               </p>
             </div>
             <div className="join-us-cta">
-              <Link href="/contact" className="btn btn-primary">Send Your CV →</Link>
+              <Link href="/contact" className="btn btn-primary">Send Your CV</Link>
             </div>
           </div>
-        </div>
+        </div>     
       </section>
 
+      {/* CTA */}
       <section className="section cta-section">
         <div className="container">
           <div className="cta-inner">
             <h2 className="display-lg">Work With Our Experts</h2>
             <p>Schedule a consultation with the right specialist for your financial needs.</p>
             <div className="cta-actions">
-              <Link href="/contact" className="btn btn-primary">Book a Consultation →</Link>
+              <Link href="/contact" className="btn btn-primary">Book a Consultation</Link>
               <Link href="/services" className="btn btn-outline">Our Services</Link>
             </div>
           </div>

@@ -1,42 +1,30 @@
 import Link from 'next/link';
 import TestimonialSlider from '@/components/TestimonialSlider';
+import {
+  FiBookOpen, FiBarChart2, FiFileText, FiHome, FiUsers, FiBriefcase,
+  FiTarget, FiShield, FiLock, FiGlobe
+} from 'react-icons/fi';
 
 const services = [
-  { icon: '📒', title: 'Bookkeeping', text: 'Accurate, real-time recording of all financial transactions ensuring clarity and control over your business finances.' },
-  { icon: '📊', title: 'Accounting Services', text: 'Comprehensive financial statements, analysis, and reporting in full compliance with UAE accounting standards.' },
-  { icon: '🧾', title: 'VAT Consultancy', text: 'Expert VAT registration, filing, and advisory tailored to the specific requirements of the UAE Federal Tax Authority.' },
-  { icon: '🏛️', title: 'Corporate Tax', text: 'Strategic planning and full compliance support for UAE Corporate Tax, minimising liability and maximising efficiency.' },
-  { icon: '👥', title: 'Payroll Management', text: 'End-to-end payroll processing across the UAE, ensuring WPS compliance, timely SIF submissions, and accuracy.' },
-  { icon: '💼', title: 'Business Advisory', text: 'High-level financial strategy, performance optimisation, and growth planning for businesses of all sizes.' },
+  { icon: <FiBookOpen size={24} />, title: 'Bookkeeping', text: 'Accurate, real-time recording of all financial transactions ensuring clarity and control over your business finances.' },
+  { icon: <FiBarChart2 size={24} />, title: 'Accounting Services', text: 'Comprehensive financial statements, analysis, and reporting in full compliance with UAE accounting standards.' },
+  { icon: <FiFileText size={24} />, title: 'VAT Consultancy', text: 'Expert VAT registration, filing, and advisory tailored to the specific requirements of the UAE Federal Tax Authority.' },
+  { icon: <FiHome size={24} />, title: 'Corporate Tax', text: 'Strategic planning and full compliance support for UAE Corporate Tax, minimising liability and maximising efficiency.' },
+  { icon: <FiUsers size={24} />, title: 'Payroll Management', text: 'End-to-end payroll processing across the UAE, ensuring WPS compliance, timely SIF submissions, and accuracy.' },
+  { icon: <FiBriefcase size={24} />, title: 'Business Advisory', text: 'High-level financial strategy, performance optimisation, and growth planning for businesses of all sizes.' },
 ];
 
 const whyFeatures = [
-  {
-    icon: '🎯',
-    title: 'UAE Market Expertise',
-    text: 'Over a decade of deep-rooted knowledge of the UAE business regulatory landscape.',
-  },
-  {
-    icon: '⚖️',
-    title: 'Full Regulatory Compliance',
-    text: 'FTA-registered professionals ensuring 100% compliance with every UAE financial regulation.',
-  },
-  {
-    icon: '🔒',
-    title: 'Confidential & Secure',
-    text: 'Strict data governance protocols safeguarding your sensitive financial information at all times.',
-  },
-  {
-    icon: '🌐',
-    title: 'Multilingual Team',
-    text: 'Serving clients in English, Arabic, and Urdu — bridging language and business cultures seamlessly.',
-  },
+  { icon: <FiTarget size={22} />, title: 'UAE Market Expertise', text: 'Over a decade of deep-rooted knowledge of the UAE business regulatory landscape.' },
+  { icon: <FiShield size={22} />, title: 'Full Regulatory Compliance', text: 'FTA-registered professionals ensuring 100% compliance with every UAE financial regulation.' },
+  { icon: <FiLock size={22} />, title: 'Confidential & Secure', text: 'Strict data governance protocols safeguarding your sensitive financial information at all times.' },
+  { icon: <FiGlobe size={22} />, title: 'Multilingual Team', text: 'Serving clients in English, Arabic, and Urdu — bridging language and business cultures seamlessly.' },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-grid-overlay" />
@@ -49,7 +37,7 @@ export default function HomePage() {
               <span className="label-gold">Trusted by 500+ UAE Businesses</span>
             </div>
 
-            <h1 className="display-xl">
+            <h1 className="display-xl" style={{ fontStyle: 'normal' }}>
               Financial Clarity.<br />
               <span className="gold-word">Built for Dubai.</span>
             </h1>
@@ -59,10 +47,10 @@ export default function HomePage() {
             </p>
 
             <div className="hero-actions">
-              <Link href="/contact" className="btn btn-primary">
-                Book Free Consultation →
+              <Link href="/contact" className="btn btn-primary" style={{ fontStyle: 'normal' }}>
+                Book Free Consultation
               </Link>
-              <Link href="/services" className="btn btn-outline">
+              <Link href="/services" className="btn btn-outline" style={{ fontStyle: 'normal' }}>
                 Explore Services
               </Link>
             </div>
@@ -93,7 +81,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PARTNERS STRIP ── */}
+      {/* PARTNERS STRIP */}
       <div className="partners-strip">
         <div className="container">
           <p className="partners-label">Trusted by leading enterprises across the UAE</p>
@@ -105,14 +93,14 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── SERVICES ── */}
+      {/* SERVICES */}
       <section className="section">
         <div className="container">
           <div className="section-header centered">
             <p className="label-gold">What We Offer</p>
             <div className="gold-line gold-line-center" />
-            <h2 className="display-lg">Comprehensive Financial Services</h2>
-            <p style={{ color: 'var(--text-muted)', maxWidth: 520, margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.7 }}>
+            <h2 className="display-lg" style={{ fontStyle: 'normal' }}>Comprehensive Financial Services</h2>
+            <p style={{ color: 'var(--text-muted)', maxWidth: 520, margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.7, fontStyle: 'normal' }}>
               From day-to-day bookkeeping to complex corporate tax strategy, we provide the full spectrum of financial services your business needs.
             </p>
           </div>
@@ -123,16 +111,14 @@ export default function HomePage() {
                 <div className="service-card-icon">{s.icon}</div>
                 <h3 className="service-card-title">{s.title}</h3>
                 <p className="service-card-text">{s.text}</p>
-                <Link href="/services" className="service-card-link">
-                  Learn More →
-                </Link>
+                <Link href="/services" className="service-card-link">Learn More</Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── WHY CHOOSE US ── */}
+      {/* WHY CHOOSE US */}
       <section className="section why-section">
         <div className="container">
           <div className="why-grid">
@@ -140,10 +126,10 @@ export default function HomePage() {
               <div className="section-header">
                 <p className="label-gold">Why BNB Accounting</p>
                 <div className="gold-line" />
-                <h2 className="display-lg" style={{ color: 'var(--white)' }}>
+                <h2 className="display-lg" style={{ color: 'var(--white)', fontStyle: 'normal' }}>
                   The Standard of Excellence in UAE Finance
                 </h2>
-                <p style={{ color: 'rgba(255,255,255,0.55)', marginTop: '1rem', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                <p style={{ color: 'rgba(255,255,255,0.55)', marginTop: '1rem', lineHeight: 1.7, fontSize: '0.95rem', fontStyle: 'normal' }}>
                   We combine international accounting standards with intimate knowledge of the UAE regulatory environment, delivering financial clarity that drives confident business decisions.
                 </p>
               </div>
@@ -153,8 +139,8 @@ export default function HomePage() {
                   <div key={f.title} className="why-feature">
                     <div className="why-feature-icon">{f.icon}</div>
                     <div className="why-feature-content">
-                      <h4>{f.title}</h4>
-                      <p>{f.text}</p>
+                      <h4 style={{ fontStyle: 'normal' }}>{f.title}</h4>
+                      <p style={{ fontStyle: 'normal' }}>{f.text}</p>
                     </div>
                   </div>
                 ))}
@@ -176,7 +162,6 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-
                 <div className="certifications">
                   <div className="cert-label">Our Certifications & Memberships</div>
                   <div className="cert-tags">
@@ -191,15 +176,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
+      {/* PROCESS */}
       <section className="section">
         <div className="container">
           <div className="section-header centered">
             <p className="label-gold">How We Work</p>
             <div className="gold-line gold-line-center" />
-            <h2 className="display-lg">Our Proven Approach</h2>
+            <h2 className="display-lg" style={{ fontStyle: 'normal' }}>Our Proven Approach</h2>
           </div>
-
           <div className="process-steps">
             {[
               { step: '01', title: 'Initial Consultation', desc: 'We assess your business needs, current financial position, and objectives in a free consultation.' },
@@ -209,44 +193,40 @@ export default function HomePage() {
             ].map(p => (
               <div key={p.step} className="process-step">
                 <div className="process-step-number">{p.step}</div>
-                <h4>{p.title}</h4>
-                <p>{p.desc}</p>
+                <h4 style={{ fontStyle: 'normal' }}>{p.title}</h4>
+                <p style={{ fontStyle: 'normal' }}>{p.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* TESTIMONIALS */}
       <section className="section testimonials-section">
         <div className="container">
           <div className="section-header centered">
             <p className="label-gold">Client Stories</p>
             <div className="gold-line gold-line-center" />
-            <h2 className="display-lg">What Our Clients Say</h2>
+            <h2 className="display-lg" style={{ fontStyle: 'normal' }}>What Our Clients Say</h2>
           </div>
           <TestimonialSlider />
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <section className="section cta-section">
         <div className="container">
           <div className="cta-inner">
             <p className="label-gold" style={{ marginBottom: '1rem' }}>Ready to Get Started?</p>
-            <h2 className="display-lg">
-              Let&rsquo;s Elevate Your<br />Financial Operations
+            <h2 className="display-lg" style={{ fontStyle: 'normal' }}>
+              Let&rsquo;s Elevate Your Financial Operations
             </h2>
-            <p>
+            <p style={{ fontStyle: 'normal' }}>
               Schedule a complimentary consultation with our senior advisors and discover how BNB Accounting can transform your financial management.
             </p>
             <div className="cta-actions">
-              <Link href="/contact" className="btn btn-primary">
-                Book Free Consultation →
-              </Link>
-              <Link href="/services" className="btn btn-outline">
-                View All Services
-              </Link>
+              <Link href="/contact" className="btn btn-primary" style={{ fontStyle: 'normal' }}>Book Free Consultation</Link>
+              <Link href="/services" className="btn btn-outline" style={{ fontStyle: 'normal' }}>View All Services</Link>
             </div>
           </div>
         </div>

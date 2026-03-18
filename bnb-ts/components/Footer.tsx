@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
 
 const services: string[] = [
   'Bookkeeping',
@@ -28,6 +29,8 @@ export default function Footer(): JSX.Element {
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
+
+          {/* BRAND */}
           <div className="footer-brand">
             <div className="footer-brand-logo">
               <div className="logo-mark">BNB</div>
@@ -36,21 +39,25 @@ export default function Footer(): JSX.Element {
                 <span className="logo-sub">Dubai · UAE</span>
               </div>
             </div>
-            <p>Trusted financial consultancy delivering precision accounting, tax compliance, and business advisory services for enterprises across the UAE.</p>
+            <p>
+              Trusted financial consultancy delivering precision accounting, tax compliance,
+              and business advisory services for enterprises across the UAE.
+            </p>
             <div className="footer-contact-item">
-              <span className="footer-contact-icon">📍</span>
+              <span className="footer-contact-icon"><FiMapPin size={15} /></span>
               <span>Office 2401, Level 24, Boulevard Plaza Tower 1, Downtown Dubai, UAE</span>
             </div>
             <div className="footer-contact-item">
-              <span className="footer-contact-icon">📞</span>
+              <span className="footer-contact-icon"><FiPhone size={15} /></span>
               <a href="tel:+97142000000">+971 4 200 0000</a>
             </div>
             <div className="footer-contact-item">
-              <span className="footer-contact-icon">✉️</span>
+              <span className="footer-contact-icon"><FiMail size={15} /></span>
               <a href="mailto:info@bnbaccounting.ae">info@bnbaccounting.ae</a>
             </div>
           </div>
 
+          {/* SERVICES */}
           <div className="footer-col">
             <h5>Services</h5>
             <ul className="footer-links">
@@ -62,6 +69,7 @@ export default function Footer(): JSX.Element {
             </ul>
           </div>
 
+          {/* QUICK LINKS */}
           <div className="footer-col">
             <h5>Quick Links</h5>
             <ul className="footer-links">
@@ -73,6 +81,7 @@ export default function Footer(): JSX.Element {
             </ul>
           </div>
 
+          {/* WORKING HOURS */}
           <div className="footer-col">
             <h5>Working Hours</h5>
             <ul className="footer-links">
@@ -90,7 +99,18 @@ export default function Footer(): JSX.Element {
               </li>
             </ul>
             <div style={{ marginTop: '1.5rem' }}>
-              <div className="cert-label" style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Certified By</div>
+              <div
+                className="cert-label"
+                style={{
+                  color: 'rgba(255,255,255,0.25)',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Certified By
+              </div>
               <div className="cert-tags">
                 {['FTA Registered', 'ICAEW', 'ACCA'].map((cert: string) => (
                   <span key={cert} className="cert-tag">{cert}</span>
@@ -98,6 +118,7 @@ export default function Footer(): JSX.Element {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="footer-bottom">

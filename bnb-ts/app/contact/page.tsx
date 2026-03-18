@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import { FiMapPin, FiPhone, FiMail, FiClock } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with BNB Accounting Dubai. Book a free consultation with our senior financial advisors today.',
 };
 
-export default function ContactPage(): JSX.Element {
+export default function ContactPage(): React.ReactElement {
   return (
     <>
+      {/* PAGE HERO */}
       <section className="page-hero">
         <div className="page-hero-grid" />
         <div className="container">
@@ -26,9 +28,12 @@ export default function ContactPage(): JSX.Element {
         </div>
       </section>
 
+      {/* CONTACT LAYOUT */}
       <section className="section">
         <div className="container">
           <div className="contact-layout">
+
+            {/* LEFT: INFO */}
             <div>
               <p className="label-gold">Our Office</p>
               <div className="gold-line" />
@@ -41,22 +46,29 @@ export default function ContactPage(): JSX.Element {
 
               <div className="contact-info">
                 <div className="contact-info-card">
-                  <div className="contact-icon">📍</div>
+                  <div className="contact-icon">
+                    <FiMapPin size={20} color="#fff" />
+                  </div>
                   <div className="contact-info-content">
                     <h4>Office Address</h4>
                     <p>Office 2401, Level 24<br />Boulevard Plaza Tower 1<br />Downtown Dubai, UAE</p>
                   </div>
                 </div>
                 <div className="contact-info-card">
-                  <div className="contact-icon">📞</div>
+                  <div className="contact-icon">
+                    <FiPhone size={20} color="#fff" />
+                  </div>
                   <div className="contact-info-content">
                     <h4>Phone</h4>
                     <a href="tel:+97142000000">+971 4 200 0000</a><br />
-                    <a href="tel:+971501234567" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>+971 50 123 4567</a>
+                    <a href="tel:+971501234567" >971 50 123 4567</a>
+                    {/* style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>+ */}
                   </div>
                 </div>
                 <div className="contact-info-card">
-                  <div className="contact-icon">✉️</div>
+                  <div className="contact-icon">
+                    <FiMail size={20} color="#fff" />
+                  </div>
                   <div className="contact-info-content">
                     <h4>Email</h4>
                     <a href="mailto:info@bnbaccounting.ae">info@bnbaccounting.ae</a><br />
@@ -64,7 +76,9 @@ export default function ContactPage(): JSX.Element {
                   </div>
                 </div>
                 <div className="contact-info-card">
-                  <div className="contact-icon">🕐</div>
+                  <div className="contact-icon">
+                    <FiClock size={20} color="#fff" />
+                  </div>
                   <div className="contact-info-content">
                     <h4>Working Hours</h4>
                     <p>Mon – Fri: 9:00 AM – 6:00 PM<br />Saturday: 10:00 AM – 2:00 PM</p>
@@ -86,6 +100,7 @@ export default function ContactPage(): JSX.Element {
               </div>
             </div>
 
+            {/* RIGHT: FORM */}
             <ContactForm />
           </div>
         </div>

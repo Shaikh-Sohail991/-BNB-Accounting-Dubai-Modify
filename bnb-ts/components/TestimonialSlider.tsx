@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FiChevronLeft, FiChevronRight, FiStar } from 'react-icons/fi';
 
 interface Testimonial {
   text: string;
@@ -39,8 +40,10 @@ const testimonials: Testimonial[] = [
 export default function TestimonialSlider(): JSX.Element {
   const [current, setCurrent] = useState<number>(0);
 
-  const prev = (): void => setCurrent(c => (c - 1 + testimonials.length) % testimonials.length);
-  const next = (): void => setCurrent(c => (c + 1) % testimonials.length);
+  const prev = (): void =>
+    setCurrent(c => (c - 1 + testimonials.length) % testimonials.length);
+  const next = (): void =>
+    setCurrent(c => (c + 1) % testimonials.length);
 
   return (
     <div className="testimonial-slider">
@@ -59,7 +62,11 @@ export default function TestimonialSlider(): JSX.Element {
                   <h4>{t.author}</h4>
                   <p>{t.role}</p>
                 </div>
-                <div className="testimonial-stars">★★★★★</div>
+                <div className="testimonial-stars">
+                  {[...Array(5)].map((_, idx) => (
+                    <FiStar key={idx} size={15} fill="#1BAFF0" stroke="#1BAFF0" />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -67,7 +74,9 @@ export default function TestimonialSlider(): JSX.Element {
       </div>
 
       <div className="slider-controls">
-        <button className="slider-btn" onClick={prev} aria-label="Previous testimonial">←</button>
+        <button className="slider-btn" onClick={prev} aria-label="Previous testimonial">
+          <FiChevronLeft size={20} />
+        </button>
         <div className="slider-dots">
           {testimonials.map((_: Testimonial, i: number) => (
             <button
@@ -78,7 +87,9 @@ export default function TestimonialSlider(): JSX.Element {
             />
           ))}
         </div>
-        <button className="slider-btn" onClick={next} aria-label="Next testimonial">→</button>
+        <button className="slider-btn" onClick={next} aria-label="Next testimonial">
+          <FiChevronRight size={20} />
+        </button>
       </div>
     </div>
   );
